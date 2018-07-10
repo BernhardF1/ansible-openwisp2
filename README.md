@@ -1,11 +1,5 @@
-ansible-openwisp2 for 60 GHz configuration
+ansible-openwisp2
 =================
-
-## CHANGE
-
-This is a fork of the ansible-openwisp2. With this fork you are able to deploy 60 GHz configuration and work with the Talon AD7200 commodity router with OpenWRT installed. Furthermore with this modified openwisp you are able to push files on the router that are auto executed. This version is aligned to the seemoo LEDE OpenWRT.
-
--> This was a project on the Technischen Universität Darmstadt with SEEMOO
 
 [![Installing OpenWISP2](https://raw.githubusercontent.com/openwisp/ansible-openwisp2/master/docs/install-openwisp2.png)](https://www.youtube.com/watch?v=v_DUeFUGG8Q&index=1&list=PLPueLZei9c8_DEYgC5StOcR5bCAcQVfR8)
 
@@ -82,7 +76,7 @@ Install this role
 For the sake of simplicity, the easiest thing is to install this role **on your local machine**
 via `ansible-galaxy` (which was installed when installing ansible), therefore run:
 
-    ansible-galaxy install bernhardf1.ansible_openwisp2
+    ansible-galaxy install openwisp.openwisp2
 
 Choose a working directory
 --------------------------
@@ -123,7 +117,7 @@ Create a new playbook file `playbook.yml` **on your local machine** with the fol
 - hosts: openwisp2
   become: "{{ become | default('yes') }}"
   roles:
-    - bernhardf1.ansible_openwisp2
+    - openwisp.openwisp2
   vars:
     openwisp2_default_from_email: "openwisp2@openwisp2.mydomain.com"
 ```
@@ -257,7 +251,7 @@ create an empty file named `playbook.yml` which contains the following:
 ```yaml
 - hosts: openwisp2
   roles:
-    - bernhardf1.ansible_openwisp2
+    - openwisp.openwisp2
   # the following line is needed only when an IP address is used as the inventory hostname
   vars:
       postfix_myhostname: localhost
@@ -295,7 +289,7 @@ your `playbook.yml` file. Here's a short summary of how to do this:
 - hosts: openwisp2
   become: "{{ become | default('yes') }}"
   roles:
-    - bernhardf1.ansible_openwisp2
+    - openwisp.openwisp2
   vars:
     openwisp2_network_topology: true
 ```
@@ -348,7 +342,7 @@ Then proceed to edit your `playbook.yml` so that it will look similar to the fol
   become: "{{ become | default('yes') }}"
   roles:
     - thefinn93.letsencrypt
-    - bernhardf1.ansible_openwisp2
+    - openwisp.openwisp2
   vars:
     # SSL certificates
     openwisp2_ssl_cert: "/etc/letsencrypt/live/{{ ansible_fqdn }}/fullchain.pem"
@@ -373,7 +367,7 @@ Upgrading openwisp2
 
 Update this ansible-role via `ansible-galaxy`:
 
-    sudo ansible-galaxy install --force bernhardf1.ansible_openwisp2
+    sudo ansible-galaxy install --force openwisp.openwisp2
 
 Run `ansible-playbook` again **from your local machine**:
 
@@ -395,7 +389,7 @@ Below are listed all the variables you can customize (you may also want to take 
 - hosts: yourhost
   roles:
   # you can add other roles here
-    - bernhardf1.ansible_openwisp2
+    - openwisp.openwisp2
   vars:
     # optional openwisp2 modules
     openwisp2_network_topology: false
