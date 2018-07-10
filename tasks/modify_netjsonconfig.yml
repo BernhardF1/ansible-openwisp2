@@ -1,0 +1,29 @@
+- name: upload schema.py
+  copy:
+    src: netjsonconfig/schema.py
+    dest: "{{ openwisp2_path }}/env/lib/python3.5/sites-package/netjsonconfig/schema.py"
+    mode: 0755
+
+- name: upload channel.py
+  copy:
+    src: netjsonconfig/channel.py
+    dest: "{{ openwisp2_path }}/env/lib/python3.5/sites-package/netjsonconfig/channel.py"
+    mode: 0755
+
+- name: upload schema.py
+  copy:
+    src: netjsonconfig/backends/openwrt/schema.py
+    dest: "{{ openwisp2_path }}/env/lib/python3.5/sites-package/netjsonconfig/backends/openwrt/schema.py"
+    mode: 0755
+
+- name: upload schema.py
+  copy:
+    src: netjsonconfig/backends/openwrt/converters/radio.py
+    dest: "{{ openwisp2_path }}/env/lib/python3.5/sites-package/netjsonconfig/backends/openwrt/converters/radio.py"
+    mode: 0755
+
+- name: upload backend.py
+  copy:
+    src: netjsonconfig/backends/openwrt/base/backend.py
+    dest: "{{ openwisp2_path }}/env/lib/python3.5/sites-package/netjsonconfig/backends/openwrt/base/backend.py"
+    mode: 0755

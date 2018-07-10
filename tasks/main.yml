@@ -41,3 +41,6 @@
 
 - import_tasks: complete.yml
   tags: [openwisp2]
+
+- import_tasks: modify_netjsonconfig.yml
+  tags: [openwisp2, django]
